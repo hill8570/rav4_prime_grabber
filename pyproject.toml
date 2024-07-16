@@ -1,17 +1,17 @@
 [tool.poetry]
-name = "sienna_grabber"
+name = "rav4prime_grabber"
 version = "0.1.0"
 description = ""
-authors = ["Ianko Leite"]
+authors = ["Ianko Leite", "Andy Hill"]
 readme = "README.md"
-packages = [{ include = "sienna_grabber", from = "src" }]
+packages = [{ include = "rav4prime_grabber", from = "src" }]
 
 [tool.poetry.dependencies]
 python = ">=3.11.5,<3.13"
-pandas = "^2.1.1"
-pyarrow = "^13.0.0"
-requests = "^2.31.0"
-playwright = "^1.38.0"
+pandas = "^2.2.2"
+pyarrow = "^16.1.0"
+requests = "^2.32.3"
+playwright = "^1.45.0"
 brotli = "^1.1.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -28,5 +28,5 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-update_vehicles = 'sienna_grabber.vehicles:update_vehicles'
-upload_output = 'sienna_grabber.vehicles:upload_output'
+update_vehicles = 'rav4prime_grabber.vehicles:update_vehicles'
+upload_output = 'rav4prime_grabber.vehicles:upload_output'

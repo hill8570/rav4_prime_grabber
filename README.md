@@ -1,4 +1,4 @@
-# Sienna Grabber
+# Rav4prime Grabber
 
 This is a fork of https://github.com/major/yotagrabber with very specific
 parameters like a MODEL, a ZIPCODE and DISTANCE.
@@ -22,9 +22,9 @@ poetry run playwright install firefox
 Run script:
 
 ```bash
-MODEL=sienna ZIPCODE=32801 DISTANCE=120 poetry run update_vehicles
+MODEL=rav4prime ZIPCODE=32801 DISTANCE=120 poetry run main
 ```
 
 ## Flat Viewer
 
-https://flatgithub.com/ianko/sienna_grabber?filename=output%2Fsienna.csv
+https://flatgithub.com/hill8570/rav4prime_grabber?filename=output%2Frav4prime.csv
