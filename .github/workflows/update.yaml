@@ -54,7 +54,7 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit != 'true'
 
       - name: Get vehicles matching model
-        run: poetry run main
+        run: poetry run update_vehicles
         env:
           PYTHONUNBUFFERED: 1
 
