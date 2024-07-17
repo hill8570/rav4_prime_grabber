@@ -124,7 +124,12 @@ def get_all_pages():
 
         result = query_toyota(page_number, query, headers)
         if result and "vehicleSummary" in result:
-            df = pd.concat([df, pd.json_normalize(result["vehicleSummary"])])
+            # Normalize the result
+            normalized_df = pd.json_normalize(result["vehicleSummary"])
+            # Exclude empty or all-NA columns
+            non_empty_columns = normalized_df.dropna(axis=1, how='all')
+            # Concatenate the DataFrames
+            df = pd.concat([df, non_empty_columns])
 
         # Drop any duplicate VINs.
         df.drop_duplicates(subset=["vin"], inplace=True)
