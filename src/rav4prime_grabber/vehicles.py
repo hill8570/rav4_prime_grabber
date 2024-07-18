@@ -248,12 +248,9 @@ def to_csv_simple(df):
     }
     df.replace({"Shipping Status": statuses}, inplace=True)
 
-    # when ETA is null, set as unknown, otherwise format as date
-    if df["ETA"].isnull().any():
-        # df["ETA"].fillna("Unknown", inplace=True)
-        df.fillna({"ETA": "Unknown"}, inplace=True)
-    else:
-        df["ETA"] = df["ETA"].apply(lambda dt: dt.split("T")[0])
+    # Set any null ETAs to display as "Unknown" & strip any time component from the non-null datetime strings
+    df.fillna({"ETA": "Unknown"}, inplace=True)
+    df["ETA"] = df["ETA"].apply(lambda dt: dt.split("T")[0])
 
     df["Options"] = df["Options"].apply(format_options)
 
