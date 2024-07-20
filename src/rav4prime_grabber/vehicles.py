@@ -278,7 +278,7 @@ def to_csv_simple(df):
     df = df[df['VIN'].str.startswith('JTMFB')]
 
     # Write the data to a file.
-    df.sort_values(by=["ETA"], inplace=True)
+    df.sort_values(by=["ETA", "VIN"], inplace=True)
     df.to_csv(f"output/{MODEL}.csv", index=False)
 
 def format_options(options_raw):
