@@ -50,13 +50,6 @@ query {
         marketingName
         marketingTitle
       }
-      media {
-        type
-        href
-        size
-        imageTag
-        source
-      }
       intColor {
         colorCd
         colorSwatch
