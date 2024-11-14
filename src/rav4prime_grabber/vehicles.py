@@ -275,7 +275,8 @@ def to_csv_simple(df):
     ]
 
     # Filter out just the RAV4 Prime with Premium Package (VIN starting with "JTMFB")
-    df = df[df['VIN'].str.startswith('JTMFB')]
+    # df = df[df['VIN'].str.startswith('JTMFB')]
+    # print(f"After filtering, there are {df.shape[0]} RAV4 Prime PP found")
 
     # Write the data to a file.
     df.sort_values(by=["ETA", "VIN"], inplace=True)
