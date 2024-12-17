@@ -278,6 +278,10 @@ def to_csv_simple(df):
     # df = df[df['VIN'].str.startswith('JTMFB')]
     # print(f"After filtering, there are {df.shape[0]} RAV4 Prime PP found")
 
+    # Filter out just the RAV4 Prime XSE (VIN starting with "JTME" or "JTMF)
+    # df = df[df['VIN'].str.startswith(('JTME', 'JTMF'))]
+    # print(f"After filtering, there are {df.shape[0]} RAV4 Prime XSE found")
+
     # Write the data to a file.
     df.sort_values(by=["ETA", "VIN"], inplace=True)
     df.to_csv(f"output/{MODEL}.csv", index=False)
